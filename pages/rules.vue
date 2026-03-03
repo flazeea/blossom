@@ -1,7 +1,7 @@
 <template>
   <div>
     <AppHeader />
-    <div class="flex justify-center p-8">
+    <div class="flex justify-center p-8 w-full h-full">
       <div class="welcome-banner relative max-w-5xl w-full">
               <!-- Lime glow effect -->
               <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-lime-500 to-transparent shadow-glow"></div>

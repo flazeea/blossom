@@ -1,7 +1,7 @@
 <template>
   <div>
     <AppHeader />
-    <div class="container mx-auto p-8">
+    <div class="container mx-auto p-8 w-full h-full">
       <div class="max-w-3xl mx-auto">
 
         <!-- Shop Card -->

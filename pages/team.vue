@@ -1,7 +1,7 @@
 <template>
   <div>
     <AppHeader />
-    <div class="container mx-auto p-8">
+    <div class="container mx-auto p-8 w-full h-full">
       <div class="max-w-3xl mx-auto">
       
 <h1 class="text-2xl md:text-5xl unbounded-bold text-white mb-3 uppercase tracking-wide text-center">

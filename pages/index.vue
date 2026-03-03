@@ -1,7 +1,7 @@
 <template>
   <div>
     <AppHeader />
-    <div class="sm:grid lg:flex justify-center p-8 gap-7">
+    <div class="sm:grid lg:flex justify-center p-8 gap-7 w-full h-full">
         <div class="left-side">
             <div class="welcome-banner relative max-w-5xl w-full mb-10">
             <!-- Lime glow effect -->
