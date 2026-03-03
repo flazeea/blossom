@@ -11,8 +11,7 @@ body {
 }
 
 :root {
-    background-color: #0f0f0f;
-    cursor: default;
+    background: #0f0f0f;
 }
 
 .circle {
