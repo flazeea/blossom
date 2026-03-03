@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Unbounded:wght@200..900&display=swap');
 @import "tailwindcss";
 
-::selection {
-    background-color: #39580a;
-}
+@layer base {
+    ::selection {
+        background-color: #39580a;
+    }
 
-body {
-    background-color: #0f0f0f;
-    cursor: default;
-}
+    body {
+        background-color: #0f0f0f;
+        cursor: default;
+    }
 
-:root {
-    background: #0f0f0f;
+    :root {
+        background: #0f0f0f;
+    }
 }
 
 .circle {
