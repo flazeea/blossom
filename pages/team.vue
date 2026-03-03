@@ -85,7 +85,7 @@
 const teamMembers = [
   {
     username: 'reinquisitor',
-    name: 'EzRaika',
+    name: 'Reinquisitor',
     role: 'Владелец',
     roleBadgeColor: '#912921',
     description:
