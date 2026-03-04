@@ -5,7 +5,7 @@
       <div class="max-w-3xl mx-auto">
       
 <h1 class="text-2xl md:text-5xl unbounded-bold text-white mb-3 uppercase tracking-wide text-center">
-          Администрация проекта
+          Команда проекта
         </h1>
         <p class="text-gray-400 unbounded-light text-sm md:text-base text-center mb-10">
           Познакомьтесь с теми, кто не покладая рук работает над Blossom!
@@ -39,16 +39,10 @@
             <!-- Heads Navigation -->
             <div class="flex items-center gap-3">
               <!-- Prev Arrow -->
-              <button
-                class="team-arrow"
-                @click="prev"
-                aria-label="Предыдущий"
-              >
-                <Icon name="mingcute:left-line" class="text-xl text-white" />
-              </button>
+              
 
               <!-- Heads Row -->
-              <div class="flex items-center gap-2 overflow-x-auto py-1 flex-1 justify-center">
+              <div class="flex items-center gap-2 py-1 flex-1 justify-center flex-wrap">
                 <button
                   v-for="(member, idx) in teamMembers"
                   :key="member.username"
@@ -56,7 +50,19 @@
                   :class="{ 'team-head-active': idx === currentIndex }"
                   @click="currentIndex = idx"
                 >
+                  <!-- Local skin file: crop head via canvas -->
+                  <canvas
+                    v-if="member.skinFile"
+                    :ref="(el) => { if (el) skinCanvasRefs[idx] = el as HTMLCanvasElement }"
+                    width="40"
+                    height="40"
+                    class="team-head-img"
+                    :data-skin="member.skinFile"
+                    :data-idx="idx"
+                  />
+                  <!-- Remote skin via minotar -->
                   <img
+                    v-else
                     :src="`https://minotar.net/helm/${member.username}/48`"
                     :alt="member.name"
                     class="team-head-img"
@@ -66,13 +72,7 @@
               </div>
 
               <!-- Next Arrow -->
-              <button
-                class="team-arrow"
-                @click="next"
-                aria-label="Следующий"
-              >
-                <Icon name="mingcute:right-line" class="text-xl text-white" />
-              </button>
+              
             </div>
           </div>
         </div>
@@ -82,7 +82,16 @@
 </template>
 
 <script lang="ts" setup>
-const teamMembers = [
+interface TeamMember {
+  username: string
+  name: string
+  role: string
+  roleBadgeColor: string
+  description: string
+  skinFile?: string // путь к файлу скина в /public, например '/skins/reinquisitor.png'
+}
+
+const teamMembers: TeamMember[] = [
   {
     username: 'reinquisitor',
     name: 'reinquisitor',
@@ -90,6 +99,7 @@ const teamMembers = [
     roleBadgeColor: '#912921',
     description:
       'Привет. Я Матвей, владелец и главный разработчик проекта Blossom. Моя задача - сделать так, чтобы вы замечали только интересный геймплей, а не технические шероховатости. Слежу за порядком, решаю вопросы и слегка контролирую этот уютный хаос. Увидимся на сервере!',
+    // skinFile: '/skins/reinquisitor.png',  // раскомментируй и положи скин в public/skins/
   },
   {
     username: 'Dekartk',
@@ -98,6 +108,15 @@ const teamMembers = [
     roleBadgeColor: '#912921',
     description:
       'Я тот самый «Сафонов - оплати», то есть отвечаю за финансирование проекта. Мы строим Blossom так, чтобы вам было комфортно и приятно в него играть. Увидимся на сервере!',
+  },
+  {
+    username: 'iRinglGoodnes',
+    name: 'iRinglGoodnes',
+    role: 'Гейм-Дизайнер',
+    roleBadgeColor: '#D48E46',
+    description:
+      'Сап, я Гриша, ГД проекта Blossom. Пока тестеры ищут баги, а разработчики их чинят, я придумываю, ради чего вы вообще сюда заходите. Кручу механики так, чтобы они приносили удовольствие, а не боль. Мы строим для вас лучший rpg-опыт. Еще увидимся!',
+    skinFile: '/skins/iRinglGoodnes.png',
   },
   {
     username: 'zhzwww',
@@ -114,20 +133,64 @@ const teamMembers = [
     roleBadgeColor: '#3D9EA1',
     description:
       'Здарова, Я Артём, лучший тестер на Blossom. Люблю искать баги, тем самым создавая приятный для игры геймплей. Мы с ребятами проделали огромную работу, чтобы вы смогли поиграть на лучшем rpg-проекте. Удачной игры!',
-  },
-  {
-    username: 'iRinglGoodnes',
-    name: 'iRinglGoodnes',
-    role: 'Гейм-Дизайнер',
-    roleBadgeColor: '#D48E46',
+  skinFile: '/skins/jstfeelhappiness.png',
+    },
+    {
+    username: 'xlunaryy',
+    name: 'xlunaryy',
+    role: 'Веб-разработчик',
+    roleBadgeColor: '#8731c4',
     description:
-      'Сап, я Гриша, ГД проекта Blossom. Пока тестеры ищут баги, а разработчики их чинят, я придумываю, ради чего вы вообще сюда заходите. Кручу механики так, чтобы они приносили удовольствие, а не боль. Мы строим для вас лучший rpg-опыт. Еще увидимся!',
-  }
+      'Привет, я Артём. Отвечаю за то, чтобы сайт работал так же круто, как и сам сервер. Если что-то сломалось на странице — это ко мне. Стараюсь сделать так, чтобы вам было удобно и приятно пользоваться всеми возможностями проекта. Увидимся онлайн!',
+    }
 ]
 
 const currentIndex = ref(0)
-
 const currentMember = computed(() => teamMembers[currentIndex.value])
+
+// Refs для canvas-элементов (локальные скины)
+const skinCanvasRefs = reactive<Record<number, HTMLCanvasElement>>({})
+
+/**
+ * Рисует голову из файла скина Minecraft на canvas.
+ * Голова: (8, 8) размер 8×8
+ * Шлем/оверлей: (40, 8) размер 8×8
+ */
+function drawSkinHead(canvas: HTMLCanvasElement, skinSrc: string) {
+  const ctx = canvas.getContext('2d')
+  if (!ctx) return
+
+  const img = new Image()
+  img.crossOrigin = 'anonymous'
+  img.onload = () => {
+    ctx.imageSmoothingEnabled = false
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    // Рисуем основу головы (8, 8, 8x8) → на весь canvas 40x40
+    ctx.drawImage(img, 8, 8, 8, 8, 0, 0, canvas.width, canvas.height)
+    // Рисуем шлем/оверлей поверх (40, 8, 8x8) → на весь canvas 40x40
+    ctx.drawImage(img, 40, 8, 8, 8, 0, 0, canvas.width, canvas.height)
+  }
+  img.src = skinSrc
+}
+
+// Перерисовка canvas при монтировании и при изменении refs
+onMounted(() => {
+  nextTick(() => {
+    teamMembers.forEach((member, idx) => {
+      if (member.skinFile && skinCanvasRefs[idx]) {
+        drawSkinHead(skinCanvasRefs[idx], member.skinFile)
+      }
+    })
+  })
+})
+
+watch(skinCanvasRefs, () => {
+  teamMembers.forEach((member, idx) => {
+    if (member.skinFile && skinCanvasRefs[idx]) {
+      drawSkinHead(skinCanvasRefs[idx], member.skinFile)
+    }
+  })
+})
 
 function prev() {
   currentIndex.value =
