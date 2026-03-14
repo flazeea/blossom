@@ -1,7 +1,8 @@
 <template>
   <div>
     <AppHeader />
-    <div class="flex justify-center p-8 w-full h-full">
+    <div class="sm:grid gap-7 lg:flex justify-center p-8  w-full h-full">
+        <div class="left-side">
       <div class="welcome-banner relative max-w-5xl w-full">
               <!-- Lime glow effect -->
               <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-lime-500 to-transparent shadow-glow"></div>
@@ -133,7 +134,14 @@
                   </p>
               </div>
           </div>
+        </div>
+        <div class="right-side max-md:pt-10 lg:max-w-[50%] h-full grid gap-7">
+            <Online />
+            <Social />
+        </div>
     </div>
+    
+    <AppFooter />
   </div>
 </template>
 

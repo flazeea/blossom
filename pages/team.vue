@@ -1,22 +1,26 @@
 <template>
   <div>
     <AppHeader />
-    <div class="container mx-auto p-8 w-full h-full">
-      <div class="max-w-3xl mx-auto">
-      
-<h1 class="text-2xl md:text-5xl unbounded-bold text-white mb-3 uppercase tracking-wide text-center">
+    <h1 class="text-2xl md:text-5xl unbounded-bold text-white mb-3 uppercase tracking-wide text-center">
           Команда проекта
         </h1>
         <p class="text-gray-400 unbounded-light text-sm md:text-base text-center mb-10">
           Познакомьтесь с теми, кто не покладая рук работает над Blossom!
         </p>
+    <div class="sm:grid lg:flex justify-center p-8 gap-7 w-full h-full">
+      
+      <div class="left-side">
+        <div class="max-w-3xl mx-auto">
+      
+
 
         <!-- Team Card -->
         <div class="welcome-banner relative">
+          
           <!-- Lime glow effect -->
           <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-lime-500 to-transparent shadow-glow"></div>
 
-          <div class="rounded-2xl border-3 p-8 md:p-10 border border-white/5 shadow-2xl">
+          <div class="rounded-2xl border-3 p-8 md:p-10 border border-white/5 shadow-2xl flex flex-col">
               
             <!-- Name + Role Badge -->
             <div class="flex items-center gap-3 mb-4 flex-wrap">
@@ -24,7 +28,7 @@
                 {{ currentMember.name }}
               </span>
               <span
-                class="text-xs md:text-sm unbounded-bold uppercase px-3 py-1 rounded-md text-white"
+                class="text-sm md:text-sm unbounded-bold uppercase px-3 py-1 rounded-md text-white"
                 :style="{ backgroundColor: currentMember.roleBadgeColor }"
               >
                 {{ currentMember.role }}
@@ -32,12 +36,12 @@
             </div>
 
             <!-- Description -->
-            <p class="text-gray-300 unbounded-light text-sm md:text-base leading-relaxed mb-8">
+            <div class="text-gray-300 unbounded-light text-sm md:text-base leading-relaxed mb-8 min-h-[230px] lg:min-h-[140px]">
               {{ currentMember.description }}
-            </p>
+            </div>
 
             <!-- Heads Navigation -->
-            <div class="flex items-center gap-3">
+            <div class="flex items-center p-4 gap-3 mt-auto">
               <!-- Prev Arrow -->
               
 
@@ -77,7 +81,14 @@
           </div>
         </div>
       </div>
+      </div>
+      <div class="right-side max-md:pt-10 lg:max-w-[50%] h-full grid gap-7">
+        <Online />
+        <Social />
+      </div>
     </div>
+      
+    <AppFooter />
   </div>
 </template>
 
@@ -121,7 +132,7 @@ const teamMembers: TeamMember[] = [
   {
     username: 'zhzwww',
     name: 'zhzwww',
-    role: 'Тестер',
+    role: 'Тестеровщик',
     roleBadgeColor: '#3D9EA1',
     description:
       'Привет, я Кирюша. Работаю тестером на Blossom больше двух лет. Работа утомительная, поэтому в свободное время я люблю залетать на сервер и устраивать там суету вместе с игроками проекта.',
@@ -129,7 +140,7 @@ const teamMembers: TeamMember[] = [
   {
     username: 'Syzcte',
     name: 'jstfeelhappines',
-    role: 'Тестер',
+    role: 'Тестеровщик',
     roleBadgeColor: '#3D9EA1',
     description:
       'Здарова, Я Артём, лучший тестер на Blossom. Люблю искать баги, тем самым создавая приятный для игры геймплей. Мы с ребятами проделали огромную работу, чтобы вы смогли поиграть на лучшем rpg-проекте. Удачной игры!',
@@ -141,7 +152,7 @@ const teamMembers: TeamMember[] = [
     role: 'Веб-разработчик',
     roleBadgeColor: '#8731c4',
     description:
-      'Привет, я Артём. Отвечаю за то, чтобы сайт работал так же круто, как и сам сервер. Если что-то сломалось на странице — это ко мне. Стараюсь сделать так, чтобы вам было удобно и приятно пользоваться всеми возможностями проекта. Увидимся онлайн!',
+      'Привет, я Артём. Отвечаю за то, чтобы сайт работал так же круто, как и сам сервер. Если что-то сломалось на странице - это ко мне. Стараюсь сделать так, чтобы вам было удобно и приятно пользоваться всеми возможностями проекта. Увидимся онлайн!',
     }
 ]
 

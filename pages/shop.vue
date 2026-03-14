@@ -1,8 +1,9 @@
 <template>
   <div>
     <AppHeader />
-    <div class="container mx-auto p-8 w-full h-full">
-      <div class="max-w-3xl mx-auto">
+    <div class="sm:grid lg:flex justify-center p-8 gap-7 w-full h-full">
+      <div class="left-side">
+        <div class="max-w-3xl mx-auto">
 
         <!-- Shop Card -->
         <div class="welcome-banner relative">
@@ -73,12 +74,6 @@
                   {{ calculatedPrice }} ₽
                 </span>
               </div>
-              <div class="flex justify-between items-center mt-1">
-                <span class="text-gray-500 unbounded-light text-xs">Курс: 1 изумруд = {{ pricePerEmerald }} ₽</span>
-                <span class="text-emerald-400 unbounded-light text-sm">
-                  {{ amount || 0 }} изумрудов
-                </span>
-              </div>
             </div>
 
             <!-- Buy button -->
@@ -90,10 +85,30 @@
               <Icon name="mingcute:shopping-bag-2-line" class="text-lg" />
               <span>Пополнить баланс</span>
             </button>
-          </div>
+
+            <!-- Success/Error message -->
+            <Transition name="fade">
+              <div
+                v-if="message"
+                class="mt-4 p-4 rounded-xl text-sm unbounded-light text-center"
+                :class="messageType === 'success'
+                  ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400'
+                  : 'bg-red-500/10 border border-red-500/20 text-red-400'"
+              >
+                {{ message }}
+              </div>
+            </Transition>
         </div>
       </div>
+      </div>
+      </div>
+      <div class="right-side max-md:pt-10 lg:max-w-[50%] h-full grid gap-7">
+        <Online />
+        <Social />
+      </div>
     </div>
+      
+    <AppFooter />
   </div>
 </template>
 
@@ -101,6 +116,8 @@
 const nickname = ref('')
 const amount = ref<number | null>(null)
 const pricePerEmerald = 1
+const message = ref('')
+const messageType = ref<'success' | 'error'>('success')
 
 const presets = [50, 100, 250, 500, 1000]
 
@@ -108,9 +125,27 @@ const calculatedPrice = computed(() => {
   return (amount.value || 0) * pricePerEmerald
 })
 
-function handlePurchase() {
+async function handlePurchase() {
   if (!nickname.value || !amount.value || amount.value < 1) return
-  alert(`Пополнение ${amount.value} изумрудов для ${nickname.value} на сумму ${calculatedPrice.value} ₽`)
+
+  try {
+    await $fetch('/api/donations', {
+      method: 'POST',
+      body: {
+        nickname: nickname.value,
+        amount: amount.value
+      }
+    })
+    message.value = `Успешно! ${amount.value} изумрудов начислено для ${nickname.value}`
+    messageType.value = 'success'
+    nickname.value = ''
+    amount.value = null
+  } catch (e) {
+    message.value = 'Ошибка при пополнении. Попробуйте позже.'
+    messageType.value = 'error'
+  }
+
+  setTimeout(() => { message.value = '' }, 5000)
 }
 </script>
 

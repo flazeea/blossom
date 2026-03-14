@@ -69,3 +69,81 @@
     opacity: 0;
     transform: translateY(-12px);
 }
+
+.social-card {
+    display: block;
+    border-radius: 12px;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.social-card-inner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    transition: box-shadow 0.3s ease;
+}
+
+.discord-icon {
+    background: linear-gradient(135deg, #5865F2, #7289DA);
+}
+
+.telegram-icon {
+    background: linear-gradient(135deg, #0088cc, #29b6f6);
+}
+
+.social-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 2px;
+}
+
+.social-arrow {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.social-card:hover .social-arrow {
+    transform: translateX(4px);
+}
+
+.discord-card:hover {
+    background: linear-gradient(135deg, rgba(88, 101, 242, 0.12), rgba(88, 101, 242, 0.04));
+    border-color: rgba(88, 101, 242, 0.25);
+}
+
+.discord-card:hover .discord-icon {
+    box-shadow: 0 0 16px rgba(88, 101, 242, 0.4);
+}
+
+.telegram-card:hover {
+    background: linear-gradient(135deg, rgba(0, 136, 204, 0.12), rgba(0, 136, 204, 0.04));
+    border-color: rgba(0, 136, 204, 0.25);
+}
+
+.telegram-card:hover .telegram-icon {
+    box-shadow: 0 0 16px rgba(0, 136, 204, 0.4);
+}
+
+.social-card:hover .social-arrow :deep(.iconify) {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
