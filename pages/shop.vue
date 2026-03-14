@@ -115,6 +115,10 @@
 </template>
 
 <script lang="ts" setup>
+useHead({
+  title: 'Магазин - Blossom'
+})
+
 const nickname = ref('')
 const amount = ref<number | null>(null)
 const pricePerEmerald = 1

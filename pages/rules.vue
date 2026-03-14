@@ -146,7 +146,9 @@
 </template>
 
 <script lang="ts" setup>
-
+useHead({
+  title: 'Правила - Blossom'
+})
 </script>
 
 <style>

@@ -1,6 +1,11 @@
 import { ensureDb } from '~/server/utils/db'
 
 export default defineEventHandler(async (event) => {
+    const token = getCookie(event, 'admin_token')
+    if (token !== 'true') {
+        throw createError({ statusCode: 401, statusMessage: 'Unauthorized' })
+    }
+
     const id = getRouterParam(event, 'id')
 
     if (!id) {

@@ -23,7 +23,25 @@
           </button>
         </div>
 
-        <div v-if="isLoading" class="flex justify-center py-10">
+        <div v-if="!isAuthenticated" class="max-w-md mx-auto bg-white/5 border border-white/10 rounded-2xl p-8">
+          <form @submit.prevent="handleLogin" class="flex flex-col gap-4">
+            <div>
+              <label class="block text-gray-400 unbounded-light text-sm mb-2">Логин</label>
+              <input v-model="loginData.username" type="text" class="admin-input" placeholder="Введите логин" required>
+            </div>
+            <div>
+              <label class="block text-gray-400 unbounded-light text-sm mb-2">Пароль</label>
+              <input v-model="loginData.password" type="password" class="admin-input" placeholder="Введите пароль" required>
+            </div>
+            <p v-if="loginError" class="text-red-400 text-sm mt-2">{{ loginError }}</p>
+            <button type="submit" class="admin-login-btn mt-4" :disabled="isLoggingIn">
+              <Icon name="mingcute:key-2-line" class="text-lg" />
+              Войти
+            </button>
+          </form>
+        </div>
+
+        <div v-else-if="isLoading" class="flex justify-center py-10">
           <Icon name="mingcute:loading-fill" class="animate-spin text-4xl text-lime-500" />
         </div>
 
@@ -95,7 +113,43 @@ interface Donation {
   created_at: string
 }
 
-const { data: donations, pending: isLoading, refresh } = useFetch<Donation[]>('/api/admin/donations')
+const isAuthenticated = ref(false)
+const loginData = reactive({ username: '', password: '' })
+const isLoggingIn = ref(false)
+const loginError = ref('')
+
+const { data: donations, pending: isLoading, refresh } = useFetch<Donation[]>('/api/admin/donations', {
+  immediate: false,
+  onResponseError({ response }) {
+    if (response.status === 401) isAuthenticated.value = false
+  }
+})
+
+// Check auth on mount
+onMounted(async () => {
+  const token = useCookie('admin_token')
+  if (token.value) {
+    isAuthenticated.value = true
+    await refresh()
+  }
+})
+
+async function handleLogin() {
+  try {
+    isLoggingIn.value = true
+    loginError.value = ''
+    await $fetch('/api/admin/login', {
+      method: 'POST',
+      body: loginData
+    })
+    isAuthenticated.value = true
+    await refresh()
+  } catch (e: any) {
+    loginError.value = e.data?.statusMessage || 'Ошибка входа'
+  } finally {
+    isLoggingIn.value = false
+  }
+}
 
 function formatDate(dateString: string) {
   const date = new Date(dateString)
@@ -132,6 +186,54 @@ async function clearAllDonations() {
 </script>
 
 <style scoped>
+.admin-input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 200;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.admin-input:focus {
+  border-color: rgba(132, 204, 22, 0.5);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 0 3px rgba(132, 204, 22, 0.1);
+}
+
+.admin-login-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #84cc16, #65a30d);
+  color: #000;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-login-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(132, 204, 22, 0.3);
+}
+
+.admin-login-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .admin-danger-btn {
   display: flex;
   align-items: center;

@@ -93,6 +93,10 @@
 </template>
 
 <script lang="ts" setup>
+useHead({
+  title: 'Команда - Blossom'
+})
+
 interface TeamMember {
   username: string
   name: string

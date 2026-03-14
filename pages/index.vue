@@ -100,6 +100,10 @@
 </template>
 
 <script lang="ts" setup>
+useHead({
+  title: 'Главная - Blossom'
+})
+
 interface Donor {
   nickname: string
   total: number
