@@ -6,10 +6,10 @@ export default defineEventHandler(async (event) => {
     const nickname = body?.nickname?.trim()
     const amount = Number(body?.amount)
 
-    if (!nickname || !amount || amount < 1) {
+    if (!nickname || !amount || amount < 1 || amount > 100000) {
         throw createError({
             statusCode: 400,
-            statusMessage: 'Некорректные данные: nickname и amount обязательны'
+            statusMessage: 'Некорректные данные: nickname и amount (до 100000) обязательны'
         })
     }
 

@@ -48,6 +48,8 @@
                 v-model.number="amount"
                 type="number"
                 min="1"
+                max="100000"
+                @input="validateAmount"
                 placeholder="Введите сумму..."
                 class="shop-input"
               />
@@ -79,7 +81,7 @@
             <!-- Buy button -->
             <button
               class="shop-buy-btn"
-              :disabled="!nickname || !amount || amount < 1"
+              :disabled="!nickname || !amount || amount < 1 || amount > 100000"
               @click="handlePurchase"
             >
               <Icon name="mingcute:shopping-bag-2-line" class="text-lg" />
@@ -125,8 +127,14 @@ const calculatedPrice = computed(() => {
   return (amount.value || 0) * pricePerEmerald
 })
 
+function validateAmount() {
+  if (amount.value && amount.value > 100000) {
+    amount.value = 100000
+  }
+}
+
 async function handlePurchase() {
-  if (!nickname.value || !amount.value || amount.value < 1) return
+  if (!nickname.value || !amount.value || amount.value < 1 || amount.value > 100000) return
 
   try {
     await $fetch('/api/donations', {
