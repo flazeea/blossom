@@ -1,23 +1,25 @@
-import Database from 'better-sqlite3'
-import { join } from 'path'
-import { mkdirSync } from 'fs'
+import { createClient } from '@libsql/client'
 
-const dataDir = join(process.cwd(), 'data')
-mkdirSync(dataDir, { recursive: true })
+const db = createClient({
+  url: process.env.TURSO_DATABASE_URL || 'file:./data/donations.db',
+  authToken: process.env.TURSO_AUTH_TOKEN,
+})
 
-const db = new Database(join(dataDir, 'donations.db'))
+let initialized = false
 
-// WAL mode for better performance
-db.pragma('journal_mode = WAL')
-
-// Create tables
-db.exec(`
-  CREATE TABLE IF NOT EXISTS donations (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nickname TEXT NOT NULL,
-    amount INTEGER NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-  )
-`)
+export async function ensureDb() {
+  if (!initialized) {
+    await db.execute(`
+      CREATE TABLE IF NOT EXISTS donations (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nickname TEXT NOT NULL,
+        amount INTEGER NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    `)
+    initialized = true
+  }
+  return db
+}
 
 export default db

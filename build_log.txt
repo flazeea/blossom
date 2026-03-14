@@ -1,0 +1,254 @@
+﻿[90mтФМ[39m  [36mBuilding Nuxt for production...[39m
+[90mтФВ[39m
+[34mтЧП[39m  [32mNuxt [1m4.3.0[22m[39m[90m (with [39m[90mNitro [1m2.13.1[22m[39m[90m, Vite [1m7.3.1[22m[39m[90m and Vue [1m3.5.27[22m[39m[90m)[39m
+[36mтД╣[39m Nuxt Icon server bundle mode is set to [36mlocal[39m
+[32mтЬФ[39m Nuxt Icon discovered local-installed 1 collections: mingcute
+[90mтФВ[39m
+[34mтЧП[39m  Nitro preset: [36mnode-server[39m
+[36mтД╣[39m Building client...
+[36mтД╣[39m [36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+[36mтД╣[39m transforming...
+[36mтД╣[39m [32mтЬУ[39m 181 modules transformed.
+[36mтД╣[39m rendering chunks...
+[36mтД╣[39m computing gzip size...
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[32mmanifest.json                 [39m[1m[2m  3.91 kB[22m[1m[22m[2m тФВ gzip:  0.67 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[35m_nuxt/AppFooter.CvJCQ2Z1.css  [39m[1m[2m  0.33 kB[22m[1m[22m[2m тФВ gzip:  0.19 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[35m_nuxt/team.Bu6ioJ9o.css       [39m[1m[2m  0.75 kB[22m[1m[22m[2m тФВ gzip:  0.36 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[35m_nuxt/error-500.BENb_mjk.css  [39m[1m[2m  1.91 kB[22m[1m[22m[2m тФВ gzip:  0.73 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[35m_nuxt/shop.C1MmDQ1u.css       [39m[1m[2m  1.93 kB[22m[1m[22m[2m тФВ gzip:  0.66 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[35m_nuxt/error-404._yXoGkXB.css  [39m[1m[2m  2.43 kB[22m[1m[22m[2m тФВ gzip:  0.86 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[35m_nuxt/index.CQBwN6Az.css      [39m[1m[2m  3.48 kB[22m[1m[22m[2m тФВ gzip:  0.95 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[35m_nuxt/entry.D4ckRp3T.css      [39m[1m[2m 23.71 kB[22m[1m[22m[2m тФВ gzip:  5.31 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/DxwaII0T.js             [39m[1m[2m  0.08 kB[22m[1m[22m[2m тФВ gzip:  0.09 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/BKUZIetp.js             [39m[1m[2m  0.33 kB[22m[1m[22m[2m тФВ gzip:  0.24 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/CYdLJHC5.js             [39m[1m[2m  3.48 kB[22m[1m[22m[2m тФВ gzip:  1.56 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/DdGpqzO5.js             [39m[1m[2m  3.79 kB[22m[1m[22m[2m тФВ gzip:  1.71 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/Y8SMxgZa.js             [39m[1m[2m  3.97 kB[22m[1m[22m[2m тФВ gzip:  2.00 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/_1-vaRIF.js             [39m[1m[2m  5.11 kB[22m[1m[22m[2m тФВ gzip:  2.00 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/pPcnCwbF.js             [39m[1m[2m  5.99 kB[22m[1m[22m[2m тФВ gzip:  2.79 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/BQDaUjvQ.js             [39m[1m[2m  6.72 kB[22m[1m[22m[2m тФВ gzip:  2.45 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/DW9odDL-.js             [39m[1m[2m  7.70 kB[22m[1m[22m[2m тФВ gzip:  3.33 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/BVVDl5M9.js             [39m[1m[2m 15.58 kB[22m[1m[22m[2m тФВ gzip:  4.02 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/DpPZ0fGV.js             [39m[1m[2m 18.54 kB[22m[1m[22m[2m тФВ gzip:  7.90 kB[22m
+[36mтД╣[39m [2mnode_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/dnSMjpW2.js             [39m[1m[2m190.96 kB[22m[1m[22m[2m тФВ gzip: 72.16 kB[22m
+[36mтД╣[39m [32mтЬУ built in 1.54s[39m
+[32mтЬФ[39m Client built in 1549ms
+[36mтД╣[39m Building server...
+[36mтД╣[39m [36mvite v7.3.1 [32mbuilding ssr environment for production...[36m[39m
+[36mтД╣[39m transforming...
+[36mтД╣[39m [32mтЬУ[39m 100 modules transformed.
+[36mтД╣[39m rendering chunks...
+node.exe : 
+строка:1 знак:1
++ & "C:\Program Files\n
+odejs/node.exe" "C:\Pro
+gram Files\nodejs/node_
+mo ...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+     :     NotSpecified
+: (:String)     [], Rem
+oteException
+    + FullyQualifiedErr
+orId :     NativeComman
+dError
+ 
+[43m[30m WARN [39m[
+49m [33m[plugin @tailw
+indcss/vite:generate:bu
+ild] Sourcemap is likel
+y to be incorrect: a pl
+ugin (@tailwindcss/vite
+:generate:build) was us
+ed to transform files, 
+but didn't generate a s
+ourcemap for the transf
+ormation. Consult the p
+lugin documentation for
+ help[39m
+
+
+[43m[30m WARN [39m[
+49m [33m[plugin @tailw
+indcss/vite:generate:bu
+ild] Sourcemap is likel
+y to be incorrect: a pl
+ugin (@tailwindcss/vite
+:generate:build) was us
+ed to transform files, 
+but didn't generate a s
+ourcemap for the transf
+ormation. Consult the p
+lugin documentation for
+ help[39m[2m (x2)[22
+m
+
+
+[43m[30m WARN [39m[
+49m [33m[plugin @tailw
+indcss/vite:generate:bu
+ild] Sourcemap is likel
+y to be incorrect: a pl
+ugin (@tailwindcss/vite
+:generate:build) was us
+ed to transform files, 
+but didn't generate a s
+ourcemap for the transf
+ormation. Consult the p
+lugin documentation for
+ help[39m[2m (x3)[22
+m
+
+
+[43m[30m WARN [39m[
+49m [33m[plugin @tailw
+indcss/vite:generate:bu
+ild] Sourcemap is likel
+y to be incorrect: a pl
+ugin (@tailwindcss/vite
+:generate:build) was us
+ed to transform files, 
+but didn't generate a s
+ourcemap for the transf
+ormation. Consult the p
+lugin documentation for
+ help[39m[2m (x4)[22
+m
+
+
+[43m[30m WARN [39m[
+49m [33m[plugin @tailw
+indcss/vite:generate:bu
+ild] Sourcemap is likel
+y to be incorrect: a pl
+ugin (@tailwindcss/vite
+:generate:build) was us
+ed to transform files, 
+but didn't generate a s
+ourcemap for the transf
+ormation. Consult the p
+lugin documentation for
+ help[39m[2m (x5)[22
+m
+
+
+[43m[30m WARN [39m[
+49m [33m[plugin @tailw
+indcss/vite:generate:bu
+ild] Sourcemap is likel
+y to be incorrect: a pl
+ugin (@tailwindcss/vite
+:generate:build) was us
+ed to transform files, 
+but didn't generate a s
+ourcemap for the transf
+ormation. Consult the p
+lugin documentation for
+ help[39m[2m (x6)[22
+m
+
+[36mтД╣[39m [32mтЬУ built in 634ms[39m
+[32mтЬФ[39m Server built in 643ms
+[90m[[90mnitro[90m][39m [32mтЬФ[39m Generated public [36m.output/public[39m
+[90m[[90mnitro[90m][39m [36mтД╣[39m Building Nuxt Nitro server (preset: [36mnode-server[39m, compatibility date: [36m2025-07-15[39m)
+(node:7324) [DEP0155] D
+eprecationWarning: Use 
+of deprecated trailing 
+slash pattern mapping "
+./" in the "exports" fi
+eld module resolution o
+f the package at C:\Use
+rs\artem\blossom\node_m
+odules\@iconify\utils\p
+ackage.json imported fr
+om C:\Users\artem\bloss
+om\node_modules\@nuxt\i
+con\dist\runtime\server
+\api.js. Mapping specif
+iers ending in "/" is n
+o longer supported.
+(Use `node --trace-depr
+ecation ...` to show wh
+ere the warning was cre
+ated)
+(node:7324) [DEP0155] D
+eprecationWarning: Use 
+of deprecated trailing 
+slash pattern mapping "
+./" in the "exports" fi
+eld module resolution o
+f the package at C:\Use
+rs\artem\blossom\node_m
+odules\@vue\shared\pack
+age.json imported from 
+C:\Users\artem\blossom\
+node_modules\@nuxt\nitr
+o-server\dist\runtime\t
+emplates\error-500.mjs.
+ Mapping specifiers end
+ing in "/" is no longer
+ supported.
+[90m[[90mnitro[90m][39m [32mтЬФ[39m Nuxt Nitro server built
+[90m  тФЬтФА .output/server/chunks/_/error-500.mjs (5.09 kB)[39m[90m (2.07 kB gzip)[39m
+[90m  тФЬтФА .output/server/chunks/_/error-500.mjs.map (182 B)[39m[90m (154 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/_/icons.mjs (3.58 MB)[39m[90m (506 kB gzip)[39m
+[90m  тФЬтФА .output/server/chunks/_/icons.mjs.map (10.1 kB)[39m[90m (107 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/_/nitro.mjs (176 kB)[39m[90m (44.5 kB gzip)[39m
+[90m  тФЬтФА .output/server/chunks/_/nitro.mjs.map (3.17 kB)[39m[90m (801 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/AppFooter-CGEBxEHr.mjs (13.7 kB)[39m[90m (3.09 kB gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/AppFooter-CGEBxEHr.mjs.map (193 B)[39m[90m (162 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/AppHeader-styles.CHx4e3P4.mjs (566 B)[39m[90m (312 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/AppHeader-styles.CHx4e3P4.mjs.map (317 B)[39m[90m (193 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/client.precomputed.mjs (9.95 kB)[39m[90m (1.22 kB gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/client.precomputed.mjs.map (188 B)[39m[90m (150 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/composables-C3-UDoyq.mjs (732 B)[39m[90m (387 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/composables-C3-UDoyq.mjs.map (197 B)[39m[90m (160 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/error-404-CDlbldrz.mjs (5.72 kB)[39m[90m (2.29 kB gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/error-404-CDlbldrz.mjs.map (193 B)[39m[90m (160 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/error-404-styles.DtuF77Et.mjs (2.72 kB)[39m[90m (985 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/error-404-styles.DtuF77Et.mjs.map (317 B)[39m[90m (190 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/error-500-BCZsskx9.mjs (4.91 kB)[39m[90m (2.01 kB gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/error-500-BCZsskx9.mjs.map (193 B)[39m[90m (161 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/error-500-styles.3g_bWYX3.mjs (2.19 kB)[39m[90m (861 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/error-500-styles.3g_bWYX3.mjs.map (317 B)[39m[90m (191 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/index-BIqjBnfu.mjs (10.4 kB)[39m[90m (3.46 kB gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/index-BIqjBnfu.mjs.map (185 B)[39m[90m (156 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/index-JGBreWZB.mjs (21.1 kB)[39m[90m (5.74 kB gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/index-JGBreWZB.mjs.map (246 B)[39m[90m (180 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/index-styles.CbY8zI9r.mjs (3.74 kB)[39m[90m (1.08 kB gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/index-styles.CbY8zI9r.mjs.map (305 B)[39m[90m (189 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/nuxt-link-DTl2Cw3i.mjs (9.4 kB)[39m[90m (2.45 kB gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/nuxt-link-DTl2Cw3i.mjs.map (193 B)[39m[90m (160 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/rules-nuqZi7fX.mjs (17.2 kB)[39m[90m (4.51 kB gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/rules-nuqZi7fX.mjs.map (185 B)[39m[90m (156 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/server.mjs (39 kB)[39m[90m (10.6 kB gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/server.mjs.map (164 B)[39m[90m (140 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/shop-Dh_sU8Iw.mjs (6.29 kB)[39m[90m (2.17 kB gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/shop-Dh_sU8Iw.mjs.map (183 B)[39m[90m (156 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/shop-styles.KhzMMokg.mjs (2.17 kB)[39m[90m (785 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/shop-styles.KhzMMokg.mjs.map (302 B)[39m[90m (186 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/styles.mjs (1.63 kB)[39m[90m (429 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/styles.mjs.map (164 B)[39m[90m (142 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/team-BMpBWd78.mjs (9.21 kB)[39m[90m (3.39 kB gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/team-BMpBWd78.mjs.map (183 B)[39m[90m (156 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/team-styles.CtmAW7NH.mjs (992 B)[39m[90m (489 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/team-styles.CtmAW7NH.mjs.map (302 B)[39m[90m (189 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/virtual_public-Qx-rhTPp.mjs (190 B)[39m[90m (165 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/build/virtual_public-Qx-rhTPp.mjs.map (203 B)[39m[90m (163 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/routes/api/donations/top.get.mjs (671 B)[39m[90m (371 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/routes/api/donations/top.get.mjs.map (341 B)[39m[90m (187 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/routes/api/index.post.mjs (1.19 kB)[39m[90m (575 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/routes/api/index.post.mjs.map (801 B)[39m[90m (281 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/routes/renderer.mjs (16.3 kB)[39m[90m (5.18 kB gzip)[39m
+[90m  тФЬтФА .output/server/chunks/routes/renderer.mjs.map (768 B)[39m[90m (266 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/virtual/_virtual_spa-template.mjs (94 B)[39m[90m (100 B gzip)[39m
+[90m  тФЬтФА .output/server/chunks/virtual/_virtual_spa-template.mjs.map (90 B)[39m[90m (98 B gzip)[39m
+[90m  тФЬтФА .output/server/index.mjs (1.74 kB)[39m[90m (765 B gzip)[39m
+[90m  тФФтФА .output/server/package.json (1.23 kB)[39m[90m (496 B gzip)[39m
+[36m╬г Total size:[39m 6.58 MB (1.28 MB gzip)
+[90m[[90mnitro[90m][39m [32mтЬФ[39m You can preview this build using [36mnode .output/server/index.mjs[39m
+[90mтФВ[39m
+[90mтФФ[39m  тЬи Build complete!

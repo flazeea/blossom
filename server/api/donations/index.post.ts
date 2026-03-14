@@ -1,4 +1,4 @@
-import db from '~/server/utils/db'
+import { ensureDb } from '~/server/utils/db'
 
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
@@ -13,7 +13,11 @@ export default defineEventHandler(async (event) => {
         })
     }
 
-    db.prepare('INSERT INTO donations (nickname, amount) VALUES (?, ?)').run(nickname, amount)
+    const db = await ensureDb()
+    await db.execute({
+        sql: 'INSERT INTO donations (nickname, amount) VALUES (?, ?)',
+        args: [nickname, amount],
+    })
 
     return { success: true }
 })
